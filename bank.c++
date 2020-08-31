@@ -3,6 +3,7 @@
 #include<cstdlib>
 #include<vector>
 #include<map>
+//code by Rahul
 using namespace std;
 #define MIN_BALANCE 500
 class InsufficientFunds{};//exception
@@ -21,7 +22,7 @@ public:
  string getFirstName(){return firstName;}
  string getLastName(){return lastName;}
  float getBalance(){return balance;}
-
+//code by Rahul
  void Deposit(float amount);
  void Withdraw(float amount);
  static void setLastAccountNumber(long accountNumber);
@@ -49,7 +50,7 @@ int main()
 {
  Bank b;
  Account acc;
-
+//code by Rahul
  int choice;
  string fname,lname;
  long accountNumber;
@@ -177,7 +178,7 @@ ostream & operator<<(ostream &os,Account &acc)
 }
 Bank::Bank()
 {
-
+//code by Rahul
  Account account;
  ifstream infile;
  infile.open("Bank.data");
@@ -194,16 +195,16 @@ Bank::Bank()
  Account::setLastAccountNumber(account.getAccNo());
 
  infile.close();
-
+//code by Rahul
 }
 Account Bank::OpenAccount(string fname,string lname,float balance)
 {
  ofstream outfile;
  Account account(fname,lname,balance);
  accounts.insert(pair<long,Account>(account.getAccNo(),account));
-
+//code by Rahul
  outfile.open("Bank.data");
-
+//code by Rahul
  map<long,Account>::iterator itr;
  for(itr=accounts.begin();itr!=accounts.end();itr++)
  {
@@ -255,3 +256,4 @@ Bank::~Bank()
  }
  outfile.close();
 }
+//code by Rahul
